@@ -18,7 +18,7 @@ class Calculator {
                 result = expression.getOperand1() / expression.getOperand2();
                 break;
             default:
-                throw new Exception("Неподдерживаемая операция");
+                throw new Exception("Некорректный оператор");
         }
         return result;
     }

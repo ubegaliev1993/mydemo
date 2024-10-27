@@ -10,19 +10,16 @@ class Main {
             String result = calc(input);
             System.out.println("Результат: " + result);
         } catch (Exception e) {
-            System.out.println("Результат: throws Exception // " + e.getMessage());
+            System.out.println("Результат: " + e.getMessage());
         }
 
         scanner.close();
     }
 
     public static String calc(String input) throws Exception {
-        ExpressionParser parser = new ExpressionParser();
-        Expression expression = parser.parse(input);
-
+        Expression expression = new Expression(input);
         Calculator calculator = new Calculator();
         int result = calculator.calculate(expression);
-
         return String.valueOf(result);
     }
 }
